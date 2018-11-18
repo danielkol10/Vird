@@ -1,0 +1,2 @@
+class VacuumsController < ApplicationController
+end
