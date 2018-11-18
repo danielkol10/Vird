@@ -1,2 +1,0 @@
-class VacuumBookingsController < ApplicationController
-end
