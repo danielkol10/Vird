@@ -17,8 +17,8 @@
 
 /* User Avatar */
 .navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
 }
 
@@ -39,10 +39,12 @@
 .navbar-wagon-link {
   color: #616668;
   font-size: 14px;
+  opacity: 0.6;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  opacity: 1;
   text-decoration: none;
+  color: #1f4287;
 }
 
 /* Dropdown menu */
@@ -74,4 +76,17 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+.btn-medium {
+  color: #616668;
+  border: 1px solid #616668;
+  padding: 10px 15px;
+  border-radius: 50px;
+  opacity: 0.6;
+  margin-right: 15px;
+}
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #1f4287;
 }

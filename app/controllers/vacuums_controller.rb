@@ -5,24 +5,24 @@ class VacuumsController < ApplicationController
     @vacuums = Vacuum.all
   end
 
-  # def show
+  def show
 
-  # end
+  end
 
-  # def new
-  #   @vacuum = Vacuum.new
-  # end
+  def new
+    @vacuum = Vacuum.new
+  end
 
-  # def create
-  #   @vacuum = Vacuum.new(vacuum_params)
-  #   @vacuum.save
+  def create
+    @vacuum = Vacuum.new(vacuum_params)
+    @vacuum.save
 
-  #   if @vacuum.save
-  #     redirect_to @vacuum
-  #   else
-  #     render :new
-  #   end
-  # end
+    if @vacuum.save
+      redirect_to @vacuum
+    else
+      render :new
+    end
+  end
 
   # def edit
   # end
