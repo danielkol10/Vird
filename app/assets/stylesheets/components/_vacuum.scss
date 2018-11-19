@@ -3,9 +3,9 @@
 }
 
 .vacuum {
-  margin: 20px;
-  width: 360px;
-  height: 600px;
+  margin: 5px;
+  width: 320px;
+  height: 350px;
   background: white;
   border-radius: 4px;
   box-shadow:  0 1px 7px rgba(0,0,0,.05);
@@ -13,16 +13,16 @@
 }
 
 .vacuum-image {
-  height: 75%;
+  height: 70%;
   border-radius: 4px 4px 0 0;
 }
 
 .vacuum-content {
-  padding: 20px;
-  height: 25%;
+  padding: 10px;
+  height: 30%;
   display: flex;
   flex-direction: column;
-}
+ }
 
 .vacuum-name {
   font-weight: bold;
@@ -31,6 +31,7 @@
 .vacuum-info {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 
 }
 
@@ -49,9 +50,11 @@
 }
 .available {
   color: green;
+
 }
 
 .unavailable {
   color: red;
+
 }
 
