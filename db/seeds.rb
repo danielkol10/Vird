@@ -1,11 +1,9 @@
 require "faker"
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+
+Vacuum.destroy_all
+User.destroy_all
+
 10.times do
   user = User.new(
     first_name: Faker::FamilyGuy.character,
@@ -15,3 +13,46 @@ require "faker"
   )
   user.save!
 end
+
+vacuum = Vacuum.create!(
+  user: User.all.sample,
+  model: "rx-9000",
+  price: 30,
+  address: "tel-aviv"
+)
+
+vacuum = Vacuum.create!(
+  user: User.all.sample,
+  model: "rx-7000",
+  price: 22,
+  address: "tel-aviv"
+)
+
+vacuum = Vacuum.create!(
+  user: User.all.sample,
+  model: "rx-8500",
+  price: 28,
+  address: "tel-aviv"
+)
+
+vacuum = Vacuum.create!(
+  user: User.all.sample,
+  model: "eagle",
+  price: 11,
+  address: "tel-aviv"
+)
+
+vacuum = Vacuum.create!(
+  user: User.all.sample,
+  model: "annihilator",
+  price: 160,
+  address: "tel-aviv"
+)
+
+vacuum = Vacuum.create!(
+  user: User.all.sample,
+  model: "decko 2000x",
+  price: 15,
+  address: "tel-aviv"
+)
+
