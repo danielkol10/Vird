@@ -11,9 +11,10 @@ class BookingsController < ApplicationController
   def create
     @vacuum = Vacuum.find(params[:vacuum_id])
     @booking = Booking.new(booking_params)
-    @booking.vacuum = @booking
+    @booking.vacuum = @vacuum
+    @booking.user = current_user
     if @booking.save
-      redirect_to vacuum_path(@vacuum)
+      redirect_to vacuum_booking_path(@vacuum, @booking)
     else
       render :new
     end
@@ -26,6 +27,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:rent_duration, :user_id)
+    params.require(:booking).permit(:rent_duration)
   end
 end

@@ -11,6 +11,11 @@
   <%= @vacuum.user.first_name %>
   <%= @vacuum.user.last_name %>
 </p>
+
+<%= simple_form_for ([@vacuum, @booking]) do |f| %>
+  <%= f.input :rent_duration %>
+  <%= f.button :submit %>
+<% end %>
 <%#= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 
 <%#= link_to 'New Dose', new_cocktail_dose_path(@cocktail) %>
