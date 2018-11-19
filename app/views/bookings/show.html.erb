@@ -1,1 +1,6 @@
-<h1>YES</h1>
+<h2>You have successfully rented a Vird!</h2>
+
+<h3>Order info:</h3>
+<p>Model: <%= @booking.vacuum[:model] %></p>
+<p>Price: $<%= @booking.vacuum[:price] * @booking[:rent_duration] %> ($<%= @booking.vacuum[:price] %>/hour)</p>
+<p>Your booking was created on <%= @booking[:created_at] %> and is set to end in <%= @booking[:rent_duration] %> hour.</p>
