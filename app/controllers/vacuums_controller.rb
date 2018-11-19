@@ -5,9 +5,9 @@ class VacuumsController < ApplicationController
     @vacuums = Vacuum.all
   end
 
-  # def show
+  def show
 
-  # end
+  end
 
   # def new
   #   @vacuum = Vacuum.new
