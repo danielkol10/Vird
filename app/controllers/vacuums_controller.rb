@@ -15,7 +15,7 @@ class VacuumsController < ApplicationController
 
   def create
     @vacuum = Vacuum.new(vacuum_params)
-    @vacuum.save
+    @vacuum.user = current_user
 
     if @vacuum.save
       redirect_to @vacuum
@@ -33,15 +33,15 @@ class VacuumsController < ApplicationController
   #   redirect_to vacuum_path
   # end
 
-  # def destroy
-  #   @vacuum.destroy
-  #   redirect_to vacuums_path
-  # end
+  def destroy
+    @vacuum.destroy
+    redirect_to vacuums_path
+  end
 
   private
 
   def vacuum_params
-    params.require(:vacuum).permit(:model, :price, :address)
+    params.require(:vacuum).permit(:model, :price, :address, :available)
   end
 
   def set_vacuum
