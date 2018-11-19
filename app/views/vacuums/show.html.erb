@@ -8,8 +8,8 @@
 
 <p>
   <strong>Vacuum Owner:</strong>
-  <%= @vacuum.user.first_name %>
-  <%= @vacuum.user.last_name %>
+  <%= @vacuum.user.email %>
+  <%#= @vacuum.user.last_name %>
 </p>
 
 <%= simple_form_for ([@vacuum, @booking]) do |f| %>
