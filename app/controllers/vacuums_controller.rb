@@ -5,24 +5,24 @@ class VacuumsController < ApplicationController
     @vacuums = Vacuum.all
   end
 
-  # def show
+  def show
+    @booking = Booking.new
+  end
 
-  # end
+  def new
+    @vacuum = Vacuum.new
+  end
 
-  # def new
-  #   @vacuum = Vacuum.new
-  # end
+  def create
+    @vacuum = Vacuum.new(vacuum_params)
+    @vacuum.user = current_user
 
-  # def create
-  #   @vacuum = Vacuum.new(vacuum_params)
-  #   @vacuum.save
-
-  #   if @vacuum.save
-  #     redirect_to @vacuum
-  #   else
-  #     render :new
-  #   end
-  # end
+    if @vacuum.save
+      redirect_to @vacuum
+    else
+      render :new
+    end
+  end
 
   # def edit
   # end
@@ -33,15 +33,15 @@ class VacuumsController < ApplicationController
   #   redirect_to vacuum_path
   # end
 
-  # def destroy
-  #   @vacuum.destroy
-  #   redirect_to vacuums_path
-  # end
+  def destroy
+    @vacuum.destroy
+    redirect_to vacuums_path
+  end
 
   private
 
   def vacuum_params
-    params.require(:vacuum).permit(:model, :price, :address)
+    params.require(:vacuum).permit(:model, :price, :address, :available)
   end
 
   def set_vacuum

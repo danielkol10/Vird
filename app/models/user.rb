@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :vacuums
-  has_many :vacuums, through: :vacuum_booking
+  has_many :bookings, dependent: :destroy
+  has_many :booked_vacuums, through: :bookings, source: :vacuum
+  has_many :owned_vacuums, class_name: 'Vacuum'
 end
