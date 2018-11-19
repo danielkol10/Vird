@@ -1,0 +1,39 @@
+<h1>My Booked Virds</h1>
+<h2> You have Booked <%= @bookings.count %> Virds so far.. </h2>
+<% @bookings.each do |booking| %>
+  <div class="vacuum-card">
+    <div class="meta">
+      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+      <ul class="details">
+        <li class="owner"><a href="#"><%= booking.vacuum.user.first_name %></a></li>
+        <li class="date">Booked at: <%= booking.created_at.strftime("%A, %b %d") %> </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1><%= booking.vacuum.model %></h1>
+      <h2>this Vird costs <%= booking.vacuum.price %>$ a day </h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+      <p class="read-more">
+        <a href="#">More Details</a>
+      </p>
+    </div>
+  </div>
+  <% end %>
+
+<!--   <div class="vacuum-card alt">
+    <div class="meta">
+      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
+      <ul class="details">
+        <li class="owner"><a href="#">Jane Doe</a></li>
+        <li class="date">July. 15, 2015</li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>Mastering the Language</h1>
+      <h2>Java is not the same as JavaScript</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+      <p class="read-more">
+        <a href="#">Read More</a>
+      </p>
+    </div>
+  </div> -->
