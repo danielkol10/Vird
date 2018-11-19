@@ -2,7 +2,7 @@ class VacuumsController < ApplicationController
   before_action :set_vacuum, only: [:show, :destroy, :edit]
 
   def index
-    @vacuums = Vacuumm.all
+    @vacuums = Vacuum.all
   end
 
   # def show
