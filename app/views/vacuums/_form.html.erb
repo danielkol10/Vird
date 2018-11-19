@@ -1,0 +1,34 @@
+<%= simple_form_for(@vacuum) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <% if @vacuum.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @vacuum.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-inputs">
+    <%= f.input :model %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :price %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :address %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :available %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
