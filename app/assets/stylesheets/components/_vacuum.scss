@@ -1,3 +1,7 @@
+#vacuums {
+  margin: 20px 0;
+}
+
 .vacuum {
   margin: 20px;
   width: 360px;
@@ -5,6 +9,7 @@
   background: white;
   border-radius: 4px;
   box-shadow:  0 1px 7px rgba(0,0,0,.05);
+
 }
 
 .vacuum-image {
@@ -23,7 +28,13 @@
   font-weight: bold;
 }
 
-.vacuum-description {
+.vacuum-info {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.vacuum-price {
   font-weight: lighter;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -33,6 +44,14 @@
 .vacuum-booking {
   flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
+.available {
+  color: green;
+}
+
+.unavailable {
+  color: red;
+}
+

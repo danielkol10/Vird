@@ -1,26 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-
-<h1>Our wonderful virds</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @vacuums.each do |vacuum| %>
-      <tr>
-        <td><%= vacuum.model %></td>
-        <td><%= link_to 'Show', vacuum %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-
-<%= link_to 'Go back', root_path %>
+<div class="container">
+  <div id="vacuums">
+    <h2>Top Virds:</h2>
+    <div class="row">
+      <% @vacuums.each do |vacuum| %>
+      <%= render @vacuums %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
