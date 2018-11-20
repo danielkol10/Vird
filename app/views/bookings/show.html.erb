@@ -1,39 +1,37 @@
 <h2>You have successfully rented a Vird!</h2>
-<div class="order-info">
-  <h3>Order info:</h3>
-
-
-
-</div>
-
-
-<!-- Info Card UI Design @ildiesign  coding: @oDsoky  -->
-
-<div class="order-info">
-  <img src="https://preview.ibb.co/myAnKf/vacuum-bookings.jpg" alt="vacuum-bookings" border="0">
-  <div class="rate">
-    <h3 class="title-card">Model: <%= @booking.vacuum[:model] %></h3>
-    <i class="fa fa-star" aria-hidden="true"></i>
-    <i class="fa fa-star" aria-hidden="true"></i>
-    <i class="fa fa-star" aria-hidden="true"></i>
-    <i class="fa fa-star-half-o" aria-hidden="true"></i>
-    <i class="fa fa-star-o" aria-hidden="true"></i>
-    <p>3.5</p>
+<div class="order-conf">
+  <div class="order-info title">
+    <h3>Order info</h3>
   </div>
+  <!-- Info Card UI Design @ildiesign  coding: @oDsoky  -->
 
-  <p>Price: $<%= @booking.vacuum[:price] * @booking[:rent_duration] %> ($<%= @booking.vacuum[:price] %>/hour)</p>
-  <p>Your booking was created on <%= @booking[:created_at] %> <br> and is set to end in <%= @booking.rent_duration %> hour.</p>
+  <div class="order-info">
+    <img src="https://preview.ibb.co/myAnKf/vacuum-bookings.jpg" alt="vacuum-bookings" border="0">
+    <div class="rate">
+      <h3 class="title-card">Model: <%= @booking.vacuum[:model] %></h3>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star-half-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+    </div>
 
-  <span class="map">
-    <i class="fa fa-map-marker" aria-hidden="true"></i>
-    <p><%= @booking.vacuum[:address] %></p>
-  </span>
+    <div class="order-content">
+    <p>Price: $<%= @booking.vacuum[:price] * @booking[:rent_duration] %> ($<%= @booking.vacuum[:price] %>/hour)</p>
+    <p>Your booking was created on <%= @booking[:created_at] %> <br> and is set to end in <%= @booking.rent_duration %> hour.</p>
+    </div>
 
-  <span class="phone">
-    <i class="fa fa-phone" aria-hidden="true"></i>
-    <p>03 339311</p>
-  </span>
+    <span class="map">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <p><%= @booking.vacuum[:address] %></p>
+    </span>
 
-  <%= link_to 'Home', root_path, class: "btn btn-warning" %>
+    <span class="phone">
+      <i class="fa fa-phone" aria-hidden="true"></i>
+      <p>03 339311</p>
+    </span>
 
+    <%= link_to 'Home', root_path, class: "btn btn-warning" %>
+
+  </div>
 </div>
