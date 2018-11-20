@@ -4,8 +4,12 @@ class BookingsController < ApplicationController
   end
 
   def new
+    if current_user.nil?
+      redirect_to new_user_registration_path
+    else
     @vacuum = Vacuum.find(params[:vacuum_id])
     @booking = Booking.new
+    end
   end
 
   def create
