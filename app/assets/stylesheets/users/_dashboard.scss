@@ -1,25 +1,16 @@
 /*PEN STYLES*/
 
-* {
-  box-sizing: border-box;
-}
 
-.main {
-  // background: rgba(251, 171, 30, 0.7);
-  // margin: 2rem;
 
-  // height: calc(100vh);
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  // background-color: white;
-   background-size: cover;
+.wrapper {
+  height: calc(100vh - 70px);
+  background-size: cover;
   background-repeat: no-repeat;
-  margin-top: 0px;
 }
 
 .title {
-  color: white;
-  text-align: center;
-  margin-top: 0px;
+  color: black;
+  text-align: left;
 }
 
 
