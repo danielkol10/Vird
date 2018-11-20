@@ -1,36 +1,36 @@
 <div class="wrapper" style="background-color: #f4f4f4;">
   <div class="container">
 
+
   <div class="title">
     <h2 style="margin-top: 0;">My Booked Virds</h1>
     <h3> You have booked <%= @bookings.count %> Virds so far.. </h2>
   </div>
 
-    <% @bookings.each do |booking| %>
-      <div class="vacuum-card">
-        <div class="meta">
-          <div class="photo" style="background-image: url(https://preview.ibb.co/myAnKf/vacuum-bookings.jpg)"></div>
-          <ul class="details">
-            <li class="owner"><a href="#"><%= booking.vacuum.user.first_name %></a></li>
-            <li class="date">Booked at: <%= booking.created_at.strftime("%A, %b %d") %> </li>
-          </ul>
-        </div>
-        <div class="description">
-          <h1><%= booking.vacuum.model %></h1>
-          <% if booking.vacuum.available %>
-            <div class="available">Available</div>
-            <% else %>
-            <div class="unavailable">Unavilable</div>
-            <% end %>
-          <h2>this Vird costs <%= booking.vacuum.price %>$ a day </h2>
-          <p> You Booked this Vird at <%= booking.created_at.strftime("%A, %b %d") %>, for <%= booking.rent_duration %> hours from this Awesome Virder: <%= booking.vacuum.user.first_name %> <br> You can book it again from the main page </p>
-          <!-- <p class="read-more">
-            <a href="#">More Details</a>
-          </p> -->
-        </div>
-        </div>
-      <% end %>
-  </div>
+  <% @bookings.each do |booking| %>
+    <div class="vacuum-card">
+      <div class="meta">
+        <div class="photo" style="background-image: url(https://preview.ibb.co/myAnKf/vacuum-bookings.jpg)"></div>
+        <ul class="details">
+          <li class="owner"><a href="#"><%= booking.vacuum.user.first_name %></a></li>
+          <li class="date">Booked at: <%= booking.created_at.strftime("%A, %b %d") %> </li>
+        </ul>
+      </div>
+      <div class="description">
+        <h1><%= booking.vacuum.model %></h1>
+        <% if booking.vacuum.available %>
+          <div class="available">Available</div>
+          <% else %>
+          <div class="unavailable">Unavilable</div>
+          <% end %>
+        <h2>this Vird costs <%= booking.vacuum.price %>$ a day </h2>
+        <p> You Booked this Vird on <%= booking.created_at.strftime("%A, %b %d") %>, for <%= booking.rent_duration %> hours from this Awesome Virder: <%= booking.vacuum.user.first_name %> <br> You can book it again from the main page </p>
+        <!-- <p class="read-more">
+          <a href="#">More Details</a>
+        </p> -->
+      </div>
+      </div>
+    <% end %>
 </div>
 
 

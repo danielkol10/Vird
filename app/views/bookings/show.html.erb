@@ -1,7 +1,6 @@
-<h2>You have successfully rented a Vird!</h2>
 <div class="order-conf">
   <div class="order-info title">
-    <h3>Order info</h3>
+    <h3>Order confirmed!</h3>
   </div>
   <!-- Info Card UI Design @ildiesign  coding: @oDsoky  -->
 
@@ -18,7 +17,7 @@
 
     <div class="order-content">
     <p>Price: $<%= @booking.vacuum[:price] * @booking[:rent_duration] %> ($<%= @booking.vacuum[:price] %>/hour)</p>
-    <p>Your booking was created on <%= @booking[:created_at] %> <br> and is set to end in <%= @booking.rent_duration %> hour.</p>
+    <p>Your booking was created on <%= @booking.created_at.strftime("%A, %b %d") %> at <%= @booking.created_at.strftime("%H:%M") %> and will end in <%= @booking.rent_duration %> hour.</p>
     </div>
 
     <span class="map">
@@ -31,7 +30,7 @@
       <p>03 339311</p>
     </span>
 
-    <%= link_to 'Home', root_path, class: "btn btn-warning" %>
+    <%= link_to 'Back', vacuums_path, class: "btn btn-warning" %>
 
   </div>
 </div>

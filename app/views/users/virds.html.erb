@@ -1,0 +1,11 @@
+<h1>My Virds</h1>
+
+
+<ul>
+  <% @vacuums.each do |vacuum| %>
+    <li>
+      <%= vacuum.model %> |
+      <%= link_to "Edit", edit_vacuum_path(vacuum), class: "btn btn-default" %>
+    </li>
+  <% end %>
+</ul>
