@@ -46,13 +46,9 @@
           </button>
         </div>
         <h3 class="product-card__name">
-          Nook
+          <%= @vacuum.model %>
         </h3>
-        <p class="product-card__subname">
-          Lounge Chair
-        </p>
-        <p class="product-card__price kb-color-text--black">$320.00</p>
-        <div class="product-card__image">
+        <div class="product-card__image" style="background-image: url(<%= image_path(@vacuum.image) %>);">
         </div>
       </div>
       <div class="kb-col kb-col--50 product-card__right">
@@ -67,44 +63,6 @@
             </a>
           </p>
         </div>
-        <div class="product-card__ratings">
-          <ul class="kb-lists">
-            <li class="kb-lists__item">
-              <i class="material-icons active">star</i>
-            </li>
-            <li class="kb-lists__item">
-              <i class="material-icons active">star</i>
-            </li>
-            <li class="kb-lists__item">
-              <i class="material-icons active">star</i>
-            </li>
-            <li class="kb-lists__item">
-              <i class="material-icons active">star</i>
-            </li>
-            <li class="kb-lists__item">
-              <i class="material-icons">star</i>
-            </li>
-          </ul>
-          <span class="product-card__review">
-            (4.67 - 172 reviews)
-          </span>
-        </div>
-        <div class="product-card__quantity">
-          <span class="kb-card__support-text">
-            Quantity
-          </span>
-          <div class="kb-carousel">
-            <button class="kb-carousel__left">
-              <i class="material-icons">keyboard_arrow_left</i>
-            </button>
-            <span class="kb-carousel__content">
-              03
-            </span>
-            <button class="kb-carousel__right">
-              <i class="material-icons">keyboard_arrow_right</i>
-            </button>
-          </div>
-        </div>
 
       </div>
     </div>
@@ -114,7 +72,7 @@
           Total Price
         </p>
         <p class="product-card__price kb-color-text--primary">
-          $960.00
+          $<%= @vacuum.price %>
         </p>
       </div>
       <div class="kb-col kb-col--50 kb-right kb-add-to-cart">

@@ -1,4 +1,3 @@
-<% @vacuums = Vacuum.all %>
 <%= simple_form_for(@vacuum) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -14,7 +13,7 @@
   <% end %>
 
   <div class="form-inputs">
-    <%= f.input :model, collection: @vacuums, label_method: :model, value_method: :model, label: "Model" , include_blank: false %>
+    <%= f.input :model, collection: Vacuum::MODELS, label: "Model" , include_blank: false %>
   </div>
 
   <div class="form-inputs">
