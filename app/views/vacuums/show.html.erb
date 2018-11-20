@@ -1,13 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-
-
-  <%#= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-
-  <%#= link_to 'New Dose', new_cocktail_dose_path(@cocktail) %>
-  <%#= link_to 'Edit', edit_cocktail_path(@cocktail) %>
-
   <div class="row">
     <div class="col-md-5">
       <%= image_tag(@vacuum.image, class: 'vacuum-img') %>
@@ -18,70 +11,25 @@
           <p>Model:</p>
           <%= @vacuum.model %>
         </div>
-        <br>
-        <div class="model">
+        <div class="price">
+          <p>Price:</p>
+          <%= @vacuum.price %>
+        </div>
+        <div class="address">
           <p>Address:</p>
           <%= @vacuum.address %>
         </div>
+        <div class="email">
         <p>Email:</p>
         <%= @vacuum.user.email %>
+      <%= link_to 'Book', new_vacuum_booking_path(@vacuum), class: "btn btn-warning", style: "float: right;" %>
       </div>
+      </div>
+
     </div>
   </div>
 
-  <%= link_to 'Book', new_vacuum_booking_path(@vacuum), class: "btn btn-warning" %>
   <%= link_to 'Back', vacuums_path %>
 
 </div>
 
-<canvas></canvas>
-
-<div class="product-card">
-  <div class="kb-card">
-    <div class="kb-card__body kb-row">
-      <div class="kb-col kb-col--50 product-card__left">
-        <div class="product-card__back">
-          <button>
-            <i class="material-icons">arrow_back</i>
-          </button>
-        </div>
-        <h3 class="product-card__name">
-          <%= @vacuum.model %>
-        </h3>
-        <div class="product-card__image" style="background-image: url(<%= image_path(@vacuum.image) %>);">
-        </div>
-      </div>
-      <div class="kb-col kb-col--50 product-card__right">
-        <p class="product-card__description">
-          Designer Karim Rashid continues to put his signature spin on all genres of design through various collaborations with top-notch companies. Another one to add to the win column is his work with Italian manufacturer Chateau d'Ax.
-        </p>
-        <div class="product-card__availability">
-          <p class="product-card__text">
-            In stock.
-            <a class="kb-link">
-              Buy Extended Warranty
-            </a>
-          </p>
-        </div>
-
-      </div>
-    </div>
-    <div class="kb-card__footer kb-row">
-      <div class="kb-col kb-col--50">
-        <p class="kb-card__support-text">
-          Total Price
-        </p>
-        <p class="product-card__price kb-color-text--primary">
-          $<%= @vacuum.price %>
-        </p>
-      </div>
-      <div class="kb-col kb-col--50 kb-right kb-add-to-cart">
-        <a class="kb-button--link kb-color-text--primary">
-          Add to Cart
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
