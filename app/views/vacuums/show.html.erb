@@ -13,7 +13,7 @@
         </div>
         <div class="price">
           <p>Price:</p>
-          <%= @vacuum.price %>
+          <%= @vacuum.price %>$
         </div>
         <div class="address">
           <p>Address:</p>
@@ -22,10 +22,8 @@
         <div class="email">
         <p>Email:</p>
         <%= @vacuum.user.email %>
-      <%= link_to 'Book', new_vacuum_booking_path(@vacuum), class: "btn btn-warning", style: "float: right;" %>
       </div>
       </div>
-
     </div>
   </div>
 
