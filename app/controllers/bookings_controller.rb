@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     @booking.vacuum = @vacuum
     @booking.user = current_user
     if @booking.save
+      @vacuum.update(available: false)
       redirect_to vacuum_booking_path(@vacuum, @booking)
     else
       render :new
