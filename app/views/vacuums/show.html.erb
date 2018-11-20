@@ -13,7 +13,7 @@
         </div>
         <div class="price">
           <p>Price:</p>
-          <%= @vacuum.price %>
+          <%= @vacuum.price %>$
         </div>
         <div class="address">
           <p>Address:</p>
@@ -22,10 +22,14 @@
         <div class="email">
         <p>Email:</p>
         <%= @vacuum.user.email %>
-      <%= link_to 'Book', new_vacuum_booking_path(@vacuum), class: "btn btn-warning", style: "float: right;" %>
       </div>
       </div>
-
+      <% if @vacuum.available %>
+  <p style="color:green"> Book this Vird now! <br> <%= rand(3..14) %> people are looking at this Vird..</p>
+  <%= link_to 'Book', new_vacuum_booking_path(@vacuum), class: "book-btn btn btn-warning", style: "float: center;" %>
+  <% else %>
+  <p style="color: red"> Sorry This Vird is not Available</p>
+  <% end %>
     </div>
   </div>
 
