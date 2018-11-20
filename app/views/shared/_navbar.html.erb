@@ -1,3 +1,4 @@
+
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
@@ -11,8 +12,11 @@
 
       <!-- Links when logged in -->
       <%= link_to "List your Vird", new_vacuum_path, class: "navbar-wagon-item navbar-wagon-link btn-medium" %>
-      <%= link_to "Dashboard", dashboard_path , class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Bookings", dashboard_path , class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <% if current_user.owned_vacuums.any? %>
+        <%= link_to "My Virds", my_virds_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
