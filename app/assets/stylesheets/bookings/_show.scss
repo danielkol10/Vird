@@ -4,17 +4,32 @@
 //   box-sizing: border-box;
 //   background: rgb(76, 76, 76);
 // }
+.order-conf {
+  position: relative;
+  top: 30px;
+}
 
 .order-info {
+
   width: 400px;
   padding: 20px;
   color: #FFFFFF;
-  margin: 2em auto;
+  margin-top: 25px;
+  margin: 1em auto;
   overflow: hidden;
   background: rgb(76, 76, 76);
-  box-shadow: 0 0 20px 0px rgb(47, 47, 47),
-              0 0 20px 0px rgba(107, 104, 104, 0);
+  box-shadow: 0 0 5px 0px rgb(47, 47, 47),
+              0 0 5px 0px rgba(107, 104, 104, 0);
 
+}
+
+.order-info .title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.order-info h3 {
+  margin: 10px;
 }
 
 .order-info img {width: 100%;}
@@ -77,7 +92,7 @@ button:hover{
 }
 
 
-p {
+.order-content p {
   color: #D8DBE2;
   font-size: 14px;
   line-height: 1.5;
