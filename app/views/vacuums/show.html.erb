@@ -12,8 +12,12 @@
     <%= @vacuum.user.email %>
     <%#= @vacuum.user.last_name %>
   </p>
-
+  <% if @vacuum.available %>
+  <p style="color:green"> Book this Vird now! <br> <%= rand(3..14) %> people are looking at this Vird..</p>
   <%= link_to 'Book', new_vacuum_booking_path(@vacuum), class: "btn btn-warning" %>
+  <% else %>
+  <p style="color: red"> Sorry This Vird is not Available</p>
+  <% end %>
   <%#= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 
   <%#= link_to 'New Dose', new_cocktail_dose_path(@cocktail) %>
