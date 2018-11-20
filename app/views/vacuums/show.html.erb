@@ -1,10 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-  <p>
-    <strong>Model:</strong>
-    <%= @vacuum.model %>
-  </p>
+  <div class="row">
+    <div class="col-md-5">
+      <%= image_tag(@vacuum.image, class: 'vacuum-img') %>
+    </div>
+    <div class="col-md-7">
+      <div class="vacuum-details">
+        <div class="model">
+          <p>Model:</p>
+          <%= @vacuum.model %>
+        </div>
+        <div class="price">
+          <p>Price:</p>
+          <%= @vacuum.price %>
+        </div>
+        <div class="address">
+          <p>Address:</p>
+          <%= @vacuum.address %>
+        </div>
+        <div class="email">
+        <p>Email:</p>
+        <%= @vacuum.user.email %>
+      <%= link_to 'Book', new_vacuum_booking_path(@vacuum), class: "btn btn-warning", style: "float: right;" %>
+      </div>
+      </div>
+
+    </div>
+  </div>
 
 
   <p>
@@ -24,8 +47,6 @@
   <%#= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
   <%= link_to 'Back', vacuums_path %> |
 
-    <div class="wrapper">
-    <div class="vacuum-img"></div>
-    <div class="vacuum-details"></div>
-  </div>
+
 </div>
+
