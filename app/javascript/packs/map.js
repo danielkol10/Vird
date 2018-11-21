@@ -16,7 +16,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   const markers = JSON.parse(mapElement.dataset.markers);
 
   markers.forEach((marker) => {
-    new mapboxgl.Marker()
+    new mapboxgl.Marker({color: '#f9762d'})
       .setLngLat([marker.lng, marker.lat])
       .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
       .setHTML(marker.infoWindow.content))
