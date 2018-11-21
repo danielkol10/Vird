@@ -4,6 +4,8 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
+    "flickity": "^2.1.2",
+    "imports-loader": "^0.8.0",
     "jquery": "^3.3.1"
   },
   "devDependencies": {
