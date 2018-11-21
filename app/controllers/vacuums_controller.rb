@@ -2,6 +2,16 @@ class VacuumsController < ApplicationController
   before_action :set_vacuum, only: [:show, :destroy, :edit]
 
   def index
+    @vacuums = Vacuum.where.not(latitude: nil, longitude: nil)
+
+    @markers = @vacuums.map do |vacuum|
+      {
+        lng: vacuum.longitude,
+        lat: vacuum.latitude,
+        infoWindow: { content: render_to_string(partial: "vacuums/vacuum_window", locals: { vacuum: vacuum }) }
+      }
+    end
+
     if current_user
       @vacuums = Vacuum.all - current_user.owned_vacuums
     else
