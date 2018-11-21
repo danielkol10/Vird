@@ -1,50 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-5">
-      <%= image_tag(@vacuum.image, class: 'vacuum-img') %>
-    </div>
-    <div class="col-md-7">
-      <div class="vacuum-details">
-        <div class="model">
-          <p>Model:</p>
-          <%= @vacuum.model %>
-        </div>
-        <div class="price">
-          <p>Price:</p>
-          <%= @vacuum.price %>$
-        </div>
-        <div class="address">
-          <p>Address:</p>
-          <%= @vacuum.address %>
-        </div>
-        <div class="email">
-        <p>Email:</p>
-        <%= @vacuum.user.email %>
-      </div>
-      </div>
+<div class="info-dash">
+  <div class="main">
+    <%= image_tag(@vacuum.image, class: 'vacuum-img') %>
+    <strong><%= @vacuum.model.capitalize %></strong><br>
+    <p>$<%= @vacuum.price %>/hour</p>
+    <p><%= @vacuum.address %></p>
+    <% if @vacuum.available %>
+    <p style="color:green"><strong>Available</strong><br></p>
+    <%= link_to 'Book', new_vacuum_booking_path(@vacuum), class: "btn btn-warning" %>
+    <% else %>
+    <p style="color: red"> Unavailable</p>
+    <% end %>
+  </div>
+  <div class="stat">
+    <div class="stat-content"><h3><%= rand(3..14) %></h3><br>Watchers</div>
+  </div>
+  <div class="stat">
+    <div class="stat-content"><h3><%= rand(30..100) %></h3><br>Orders</div>
+  </div>
+  <div class="stat">
+    <div class="stat-content"><h3><%= rand(10..20) %></h3><br>Reviews</div>
+  </div>
+  <div class="description">
+    <div class="description-content">
+      <h3>Vird info</h3>
+      <p class="text-justify">
+        The <%= @vacuum.model  %> cleaner, also known as a <strong>Vird</strong>, is a device that uses an air pump (a centrifugal fan in all but some of the very oldest models), to create a partial vacuum to suck up dust and dirt, usually from floors, and from other surfaces such as upholstery and draperies. Contact <%= @vacuum.user.first_name  %> by email for further information about his/her <strong>Vird</strong>. <br> Contact detail - <%= @vacuum.user.email  %>
+      </p>
     </div>
   </div>
-
-
-  <p>
-    <strong>Vacuum Owner:</strong>
-    <%= @vacuum.user.email %>
-    <%#= @vacuum.user.last_name %>
-  </p>
-  <% if @vacuum.available %>
-  <p style="color:green"> Book this Vird now! <br> <%= rand(3..14) %> people are looking at this Vird..</p>
-  <%= link_to 'Book', new_vacuum_booking_path(@vacuum), class: "btn btn-warning" %>
-  <% else %>
-  <p style="color: red"> Sorry This Vird is not Available</p>
+  <%= link_to vacuums_path do %>
+    <i class="fa fa-chevron-circle-left" style="font-size:24px; color: black"></i>
   <% end %>
-  <%#= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-
-  <%#= link_to 'New Dose', new_cocktail_dose_path(@cocktail) %>
-  <%#= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
-  <%= link_to 'Back', vacuums_path %> |
-
-
 </div>
+
 
