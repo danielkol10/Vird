@@ -2,9 +2,18 @@
 
 <div class="container">
   <div id="vacuums">
-    <%= simple_form_for :search, url: vacuums_path, method: :get do |f| %>
-      <%= f.input :query, label: false, placeholder: "Find a Vird" %>
-    <% end %>
+    <div class="form-wrapper">
+      <%= simple_form_for :search, url: vacuums_path, method: :get do |f| %>
+        <div id="search-bar">
+          <%= f.input :query, label: false, placeholder: "Find a Vird" %>
+        </div>
+      <% end %>
+      <% if @query %>
+        <div id="show-btn">
+          <%= link_to "Show All", vacuums_path, class: "btn btn-warning btn-sm" %>
+        </div>
+      <% end %>
+    </div>
 
     <% if @vacuums.empty? %>
       <h2>No results found.</h2>
