@@ -19,3 +19,12 @@
 
 @import "vacuums/index";
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container{
+  min-height: 100%;
+}
+
