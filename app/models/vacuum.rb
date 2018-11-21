@@ -1,4 +1,6 @@
 class Vacuum < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   MODELS = %w(rx-9000 rx-7000 rx-8500 eagle annihilator decko\ 2000x)
 
   VACCUM_PHOTOS = {
@@ -29,7 +31,7 @@ class Vacuum < ApplicationRecord
   pg_search_scope :global_search,
     against: [ :model, :address ],
     associated_against: {
-      user: [ :first_name, :last_name, :email ]
+      user: [:first_name, :last_name]
     },
     using: {
       tsearch: { prefix: true }

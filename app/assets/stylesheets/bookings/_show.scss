@@ -70,21 +70,21 @@
   display: inline-block;
 }
 
-button {
-  width: 100%;
-  color: #fff;
-  padding:17px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 20px;
-  transition: all 0.3s linear;
-  text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(to left, rgb(11, 191, 160), rgb(108, 196, 115));
+// .booking-show-button {
+//   width: 100%;
+//   color: #fff;
+//   padding:17px;
+//   border: none;
+//   outline: none;
+//   cursor: pointer;
+//   font-size: 20px;
+//   transition: all 0.3s linear;
+//   text-transform: uppercase;
+//   font-family: 'Open Sans', sans-serif;
+//   background: linear-gradient(to left, rgb(11, 191, 160), rgb(108, 196, 115));
 
-  opacity: 1;
-}
+//   opacity: 1;
+// }
 
 button:hover{
   background: linear-gradient(to right, rgb(11, 191, 160), rgb(108, 196, 115));

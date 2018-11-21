@@ -1,32 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<div class="container">
+<div class="map-wrapper">
   <div id="vacuums">
-    <div class="form-wrapper">
-      <%= simple_form_for :search, url: vacuums_path, method: :get do |f| %>
-        <div id="search-bar">
-          <%= f.input :query, label: false, placeholder: "Find a Vird" %>
-        </div>
-      <% end %>
-      <% if @query %>
-        <div id="show-btn">
-          <%= link_to "Show All", vacuums_path, class: "btn btn-warning btn-sm" %>
-        </div>
-      <% end %>
-    </div>
 
-    <% if @vacuums.empty? %>
-      <h2>No results found.</h2>
-    <% else %>
-      <h2>Top Virds:</h2>
-      <div class="row">
-
-
-        <%= render @vacuums %>
-
-      </div>
-    <% end %>
-
+ <div class="form-wrapper">
+  <%= simple_form_for :search, url: vacuums_path, method: :get do |f| %>
+  <div id="search-bar">
+    <%= f.input :query, label: false, placeholder: "Find a Vird" %>
   </div>
+  <% end %>
+  <% if @query %>
+  <div id="show-btn">
+    <%= link_to "Show All", vacuums_path, class: "btn btn-warning btn-sm" %>
+  </div>
+  <% end %>
 </div>
+
+<% if @vacuums.empty? %>
+<h2>No results found.</h2>
+<% else %>
+<div class="index-title">
+  <h2>Top Virds</h2>
+</div>
+<div class="row">
+  <%= render @vacuums %>
+</div>
+<% end %>
+
+</div>
+
+<div
+id="map"
+data-markers="<%= @markers.to_json %>"
+data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+</div>
+
 

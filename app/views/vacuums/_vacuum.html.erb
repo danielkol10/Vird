@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-6 col-md-4">
+<div class="col-xs-12 col-sm-4">
    <div class="vacuum">
 
     <div class="vacuum-image" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.2),rgba(76,76,76,0.2) 30%), url(<%= image_path(vacuum.image) %>) center / contain no-repeat;"></div>
@@ -17,14 +17,14 @@
           </div>
 
           <div class="vacuum-price">
-            <p>$ <%= vacuum.price %>/hour</p>
+            <p>$<%= vacuum.price %>/hour</p>
           </div>
         </div>
         <div class="vacuum-owner">
           <p>By <%= vacuum.user.first_name %></p>
         </div>
       <div class="vacuum-booking">
-        <%= link_to "View Details", vacuum_path(vacuum), class: "btn btn-warning" %>
+        <%= link_to "View Details", vacuum_path(vacuum), class: "btn-sm btn-warning centered-button" %>
       </div>
     </div>
   </div>
