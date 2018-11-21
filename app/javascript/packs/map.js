@@ -39,6 +39,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
   }));
+
 }
 
 const addressInput = document.getElementById('address');
@@ -49,3 +50,15 @@ if (addressInput) {
     container: addressInput
   });
 }
+
+
+
+
+
+
+
+
+
+
+
+
