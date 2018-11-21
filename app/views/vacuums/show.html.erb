@@ -3,7 +3,9 @@
 <div class="info-dash">
   <div class="main">
     <%= image_tag(@vacuum.image, class: 'vacuum-img') %>
-    <strong><%= @vacuum.model.capitalize %></strong>
+    <strong><%= @vacuum.model.capitalize %></strong><br>
+    <p>$<%= @vacuum.price %>/hour</p>
+    <p><%= @vacuum.address %></p>
     <% if @vacuum.available %>
     <p style="color:green"><strong>Available</strong><br></p>
     <%= link_to 'Book', new_vacuum_booking_path(@vacuum), class: "btn btn-warning" %>
@@ -22,35 +24,15 @@
   </div>
   <div class="description">
     <div class="description-content">
-      <h3>More about the <%= @vacuum.model.capitalize %></h3>
+      <h3>Vird info</h3>
       <p class="text-justify">
-        Yeeeeeeeeeeeeeeeeeeeeeee
+        The <%= @vacuum.model  %> cleaner, also known as a <strong>Vird</strong>, is a device that uses an air pump (a centrifugal fan in all but some of the very oldest models), to create a partial vacuum to suck up dust and dirt, usually from floors, and from other surfaces such as upholstery and draperies. Contact <%= @vacuum.user.first_name  %> by email for further information about his/her <strong>Vird</strong>. <br> Contact detail - <%= @vacuum.user.email  %>
       </p>
     </div>
   </div>
-  <%= link_to 'Back', vacuums_path %> |
+  <%= link_to vacuums_path do %>
+    <i class="fa fa-chevron-circle-left" style="font-size:24px; color: black"></i>
+  <% end %>
 </div>
 
 
-<!-- <div class="price">
-  <p>Price:</p>
-  <%= @vacuum.price %>$
-</div>
-<div class="address">
-  <p>Address:</p>
-  <%= @vacuum.address %>
-</div>
-<div class="email">
-  <p>Email:</p>
-  <%= @vacuum.user.email %>
-</div>
-</div> -->
-
-<div class="owner"></div>
-    <p>
-      <strong>Vacuum Owner:</strong>
-      <%= @vacuum.user.first_name %>
-      <br>
-      <%= @vacuum.user.email %>
-    </p>
-  </div>
