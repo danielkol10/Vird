@@ -17,6 +17,16 @@ class VacuumsController < ApplicationController
     else
       @vacuums = Vacuum.all
     end
+
+    @query = params.dig(:search, :query)
+
+    if @query.present? && current_user
+      @vacuums = Vacuum.global_search(@query) - current_user.owned_vacuums
+    elsif @query.present?
+      @vacuums = Vacuum.global_search(@query)
+    else
+      @vacuums = Vacuum.all
+    end
   end
 
   def show
