@@ -20,6 +20,9 @@
             <p>$ <%= vacuum.price %>/hour</p>
           </div>
         </div>
+        <div class="vacuum-owner">
+          <p>By <%= vacuum.user.first_name %></p>
+        </div>
       <div class="vacuum-booking">
         <%= link_to "View Details", vacuum_path(vacuum), class: "btn btn-warning" %>
       </div>
