@@ -7,6 +7,28 @@ class VacuumsController < ApplicationController
     else
       @vacuums = Vacuum.all
     end
+
+    @query = params.dig(:search, :query)
+
+    if @query.present?
+      sql_query = " \
+        vacuums.model @@  :query \
+        OR vacuums.address @@  :query \
+        OR users.first_name @@  :query \
+        OR users.last_name @@  :query \
+        OR users.email @@  :query \
+      "
+      @vacuums = Vacuum.joins(:user).where(sql_query, query: "%#{@query}%")
+    else
+      @vacuums = Vacuum.all
+    end
+
+    # query is either an empty string or nil
+    # if @query.present?
+    #   @vacuums = Vacuum.where("model ILIKE ? OR address ILIKE ?", "%#{@query}%", "%#{@query}%")
+    # else
+    #   @vacuums = Vacuum.all
+    # end
   end
 
   def show

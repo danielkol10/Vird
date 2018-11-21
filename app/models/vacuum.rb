@@ -18,6 +18,23 @@ class Vacuum < ApplicationRecord
 
   validates :model, inclusion: { in: MODELS }
 
+  # include PgSearch
+  # pg_search_scope :search_by_model_and_address,
+  #   against: [ :model, :address ],
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
+
+  include PgSearch
+  pg_search_scope :global_search,
+    against: [ :model, :address ],
+    associated_against: {
+      user: [ :first_name, :last_name, :email ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+
   private
 
   def set_image

@@ -2,13 +2,22 @@
 
 <div class="container">
   <div id="vacuums">
-    <h2>Top Virds:</h2>
-    <div class="row">
+    <%= simple_form_for :search, url: vacuums_path, method: :get do |f| %>
+      <%= f.input :query, label: false, placeholder: "Find a Vird" %>
+    <% end %>
+
+    <% if @vacuums.empty? %>
+      <h2>No results found.</h2>
+    <% else %>
+      <h2>Top Virds:</h2>
+      <div class="row">
 
 
-      <%= render @vacuums %>
+        <%= render @vacuums %>
 
-    </div>
+      </div>
+    <% end %>
+
   </div>
 </div>
 
