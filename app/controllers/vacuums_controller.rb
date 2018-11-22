@@ -1,6 +1,8 @@
 class VacuumsController < ApplicationController
   before_action :set_vacuum, only: [:show, :destroy, :edit]
 
+  # ayout 'map', only: :index
+
   def index
     @vacuums = Vacuum.where.not(latitude: nil, longitude: nil)
     @query = params.dig(:search, :query)
