@@ -19,6 +19,8 @@ class Vacuum < ApplicationRecord
   # has_many :users, through: :bookings
 
   validates :model, inclusion: { in: MODELS }
+  validates :price, presence: true
+  validates :address, presence: true
 
   # include PgSearch
   # pg_search_scope :search_by_model_and_address,
