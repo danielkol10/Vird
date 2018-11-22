@@ -1,0 +1,44 @@
+// .container-virds {
+//   height: calc(100vh - 70px);
+//   padding: 20px 0;
+//   margin-left: 400px;
+//   margin-right: 400px;
+//   margin-top: 20px;
+// }
+
+.list-card {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 50px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+}
+
+.list-image {
+    width: 250px;
+    height: 200px;
+}
+
+.list-model {
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.list-price {
+  text-align: center;
+}
+
+.col-xs-12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+

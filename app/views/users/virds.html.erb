@@ -1,11 +1,22 @@
-<h1>My Virds</h1>
+<h1 style="font-weight: bold; text-align: center">My Virds</h1>
 
-
-<ul>
+<div class="container">
   <% @vacuums.each do |vacuum| %>
-    <li>
-      <%= vacuum.model %> |
-      <%= link_to "Edit", edit_vacuum_path(vacuum), class: "btn btn-default" %>
-    </li>
+    <div class="list-card">
+        <div>
+          <%= image_tag (vacuum.image), class: 'list-image' %>
+        </div>
+        <div>
+          <div class="list-model"><%= vacuum.model.capitalize %></div>
+          <div class="list-price">$<%= vacuum.price %>/hour</div>
+        </div>
+        <div>
+          <%= link_to "Edit", edit_vacuum_path(vacuum), class: "btn btn-default" %>
+          <%= link_to "Delete", vacuum_path(vacuum), method: :delete, class: "btn btn-danger" %>
+        </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
+
+
