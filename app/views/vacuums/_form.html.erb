@@ -1,34 +1,51 @@
-<%= simple_form_for(@vacuum) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
-  <% if @vacuum.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @vacuum.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+      <div class="form-login">
+
+        <h2>My Vird</h2>
+        <%= simple_form_for(@vacuum) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+          <% if @vacuum.errors.any? %>
+            <div class="errors-container">
+              <ul>
+                <% @vacuum.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-inputs">
+            <%= f.input :model, collection: Vacuum::MODELS, label: "Model" , include_blank: false %>
+          </div>
+
+          <div class="form-inputs">
+            <%= f.input :price %>
+          </div>
+
+          <div class="form-inputs">
+            <%= f.input :address %>
+          </div>
+
+          <div class="form-inputs">
+            <%= f.input :available %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, class: "btn btn-warning" %>
+          </div>
         <% end %>
-      </ul>
+          <%= link_to 'Back', vacuums_path %>
+      </div>
+
     </div>
-  <% end %>
-
-  <div class="form-inputs">
-    <%= f.input :model, collection: Vacuum::MODELS, label: "Model" , include_blank: false %>
   </div>
+</div>
 
-  <div class="form-inputs">
-    <%= f.input :price %>
-  </div>
 
-  <div class="form-inputs">
-    <%= f.input :address %>
-  </div>
 
-  <div class="form-inputs">
-    <%= f.input :available %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-warning" %>
-  </div>
-<% end %>
