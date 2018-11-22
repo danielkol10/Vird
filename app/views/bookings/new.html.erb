@@ -1,20 +1,38 @@
 <div class="container">
-  <p>
-    <strong>Model:</strong>
-    <%= @vacuum.model %>
-  </p>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+
+      <div class="form-login">
+
+        <p>
+          <strong>Model:</strong>
+          <%= @vacuum.model %>
+        </p>
 
 
-  <p>
-    <strong>Vacuum Owner:</strong>
-    <%= @vacuum.user.email %>
-    <%#= @vacuum.user.last_name %>
-  </p>
+        <p>
+          <strong>Vacuum Owner:</strong>
+          <%= @vacuum.user.email %>
+          <%#= @vacuum.user.last_name %>
+        </p>
 
-  <%= simple_form_for ([@vacuum, @booking]) do |f| %>
-    <%= f.input :rent_duration %>
-    <% if @vacuum.user != current_user %>
-    <%= f.button :submit, class: "btn btn-warning"%>
-    <% end %>
-  <% end %>
+        <%= simple_form_for ([@vacuum, @booking]) do |f| %>
+          <%= f.input :rent_duration %>
+          <% if @vacuum.user != current_user %>
+          <%= f.button :submit, class: "btn btn-warning"%>
+          <% end %>
+        <% end %>
+
+
+
+      </div>
+
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
