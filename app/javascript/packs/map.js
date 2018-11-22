@@ -1,7 +1,5 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
-import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 
 const mapElement = document.getElementById('map');
@@ -35,11 +33,6 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     });
     map.fitBounds(bounds, { duration: 0, padding: 75 })
   }
-
-  map.addControl(new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken
-  }));
-
 }
 
 const addressInput = document.getElementById('address');
