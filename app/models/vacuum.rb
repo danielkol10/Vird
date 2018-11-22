@@ -15,7 +15,7 @@ class Vacuum < ApplicationRecord
   before_validation :set_image
 
   belongs_to :user
-  # has_many :bookings
+  has_many :bookings, dependent: :destroy
   # has_many :users, through: :bookings
 
   validates :model, inclusion: { in: MODELS }

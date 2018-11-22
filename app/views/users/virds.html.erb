@@ -1,11 +1,18 @@
 <h1>My Virds</h1>
 
-
-<ul>
-  <% @vacuums.each do |vacuum| %>
-    <li>
-      <%= vacuum.model %> |
+<div class="container-virds">
+  <div class="myvird-card">
+    <% @vacuums.each do |vacuum| %>
+    <div class="list-img">
+<!--       <%= image_tag (vacuum.image) %> -->
+    </div>
+    <div class="list-info">
+      <%= vacuum.model %>
+    </div>
+    <div class="list-option">
       <%= link_to "Edit", edit_vacuum_path(vacuum), class: "btn btn-default" %>
-    </li>
-  <% end %>
-</ul>
+      <%= link_to "Delete", vacuum_path(vacuum), method: :delete, class: "btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+</div>

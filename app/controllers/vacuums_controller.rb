@@ -44,7 +44,7 @@ class VacuumsController < ApplicationController
     @vacuum.user = current_user
 
     if @vacuum.save
-      redirect_to @vacuum
+      redirect_to my_virds_path
     else
       render :new
     end
@@ -60,8 +60,9 @@ class VacuumsController < ApplicationController
   end
 
   def destroy
+    @vacuum = Vacuum.find(params[:id])
     @vacuum.destroy
-    redirect_to vacuums_path
+    redirect_to request.referer
   end
 
   private
