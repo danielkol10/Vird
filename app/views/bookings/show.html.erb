@@ -5,7 +5,7 @@
   <!-- Info Card UI Design @ildiesign  coding: @oDsoky  -->
 
   <div class="order-info">
-    <img src="https://preview.ibb.co/myAnKf/vacuum-bookings.jpg" alt="vacuum-bookings" border="0">
+    <%= image_tag(@booking.vacuum.image, class: 'booking-confirmation-image') %>
     <div class="rate">
       <h3 class="title-card">Model: <%= @booking.vacuum[:model] %></h3>
       <i class="fa fa-star" aria-hidden="true"></i>
