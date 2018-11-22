@@ -5,6 +5,11 @@ class VacuumsController < ApplicationController
 
   def index
     @vacuums = Vacuum.where.not(latitude: nil, longitude: nil)
+    @query = params.dig(:search, :query)
+    @vacuums = @vacuums.global_search(@query) if @query.present?
+
+    # Array - Active Record queries need to come above
+    @vacuums = @vacuums - current_user.owned_vacuums if current_user
 
     @markers = @vacuums.map do |vacuum|
       {
@@ -12,22 +17,6 @@ class VacuumsController < ApplicationController
         lat: vacuum.latitude,
         infoWindow: { content: render_to_string(partial: "vacuums/vacuum_window", locals: { vacuum: vacuum }) }
       }
-    end
-
-    if current_user
-      @vacuums = Vacuum.all - current_user.owned_vacuums
-    else
-      @vacuums = Vacuum.all
-    end
-
-    @query = params.dig(:search, :query)
-
-    if @query.present? && current_user
-      @vacuums = Vacuum.global_search(@query) - current_user.owned_vacuums
-    elsif @query.present?
-      @vacuums = Vacuum.global_search(@query)
-    else
-      @vacuums = Vacuum.all
     end
   end
 
